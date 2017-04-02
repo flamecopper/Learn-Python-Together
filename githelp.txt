@@ -1,0 +1,11 @@
+mkdir LearnPython
+cd LearnPython/
+git init .
+git pull https://github.com/flamecopper/Learn-Python-Together.git
+#choose the file to add
+git remote add *
+#origin is the filename
+git remote add origin https://github.com/flamecopper/Learn-Python-Together.git
+#git commit -m "Commit message"
+will prompt for the changes required
+#git push origin master
