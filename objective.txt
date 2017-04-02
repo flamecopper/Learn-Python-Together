@@ -1,0 +1,12 @@
+1 - Sessions 1 (02/Apr/2017)
+
+Learn Toolbox 
+	- Learn Github
+	- Learn C++
+	- Learn Python
+	- Learn Ruby
+	
+Objective met, managed to convert Python to C++ and Ruby.
+Learn about the syntax and data type difference.
+For example, C++ need int type for integer while Python and ruby is weakly type and dynamic assignment
+The indentation and markup is slightly different from Python and Ruby as well.
