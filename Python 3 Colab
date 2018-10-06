@@ -1,0 +1,536 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled1.ipynb",
+      "version": "0.3.2",
+      "provenance": [],
+      "collapsed_sections": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "[View in Colaboratory](https://colab.research.google.com/github/flamecopper/Learn-Python-Together/blob/master/Python%203%20Colab)"
+      ]
+    },
+    {
+      "metadata": {
+        "id": "CUH65rwbdWll",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "cell_type": "code",
+      "source": [
+        "#import Libraries\n",
+        "import datetime\n",
+        "import pandas as pd\n",
+        "from pandas import read_csv\n",
+        "\n",
+        "print(\"Libraries imported sucessfully\")\n",
+        "print(\"Good Morning!\")"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "metadata": {
+        "id": "xTdpOuO8deIM",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "cell_type": "code",
+      "source": [
+        "import tensorflow as tf"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "metadata": {
+        "id": "NZOBGmZwdeLM",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "cell_type": "code",
+      "source": [
+        "a_number = 2\n",
+        "a_word = 'dog'\n",
+        "a_number = 'cat' #overidding\n",
+        "\n",
+        "print(a_number) # Printing\n",
+        "type(a_number) # Data Type"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "metadata": {
+        "id": "SJfKpy7MdeN5",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "cell_type": "code",
+      "source": [
+        "#line comments\n",
+        "'''\n",
+        "block comments\n",
+        "'''"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "metadata": {
+        "id": "qf_AQ_VadeRA",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "cell_type": "code",
+      "source": [
+        "#mutable - order can be changed\n",
+        "pets = ['dogs','cats','fish']\n",
+        "pets1 =  ['dogs','cats','fish']\n",
+        "pets2 = [pets,pets1]\n",
+        "print(pets[0])\n",
+        "print(pets[1])\n",
+        "print(pets2)\n"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "metadata": {
+        "id": "vodyG5oodeUL",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "cell_type": "code",
+      "source": [
+        "#permanent assignment\n",
+        "pets.append('hedgehog')\n",
+        "pets"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "metadata": {
+        "id": "d5O68XL6deW8",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "cell_type": "code",
+      "source": [
+        "#permanent assignment\n",
+        "pets.remove('hedgehog')\n",
+        "pets"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "metadata": {
+        "id": "7Fk_B7f6deZ7",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "cell_type": "code",
+      "source": [
+        "pets.reverse()\n",
+        "print(pets)\n",
+        "\n",
+        "pets.sort()\n",
+        "print(pets)"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "metadata": {
+        "id": "0ZVg4m40dedN",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 52
+        },
+        "outputId": "7d7c06ef-0d1d-4385-92cd-4c0438b8d493"
+      },
+      "cell_type": "code",
+      "source": [
+        "penny = (60, 75, 'yellow')\n",
+        "print(type(penny))\n",
+        "penny"
+      ],
+      "execution_count": 3,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "<class 'tuple'>\n"
+          ],
+          "name": "stdout"
+        },
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "(60, 75, 'yellow')"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 3
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "id": "v7foybSXdrme",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 52
+        },
+        "outputId": "ca508855-353c-4b9f-ebaa-08479bb5c95d"
+      },
+      "cell_type": "code",
+      "source": [
+        "store_one = {'bulldog','parrot','hamster','fish'}\n",
+        "store_two = {'fish','parrot','terrier','cat'}\n",
+        "print (store_one.intersection(store_two))\n",
+        "print (store_one.union(store_two))"
+      ],
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "{'fish', 'parrot'}\n",
+            "{'hamster', 'fish', 'bulldog', 'cat', 'terrier', 'parrot'}\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "id": "3Csx0MiFdrzz",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "cell_type": "code",
+      "source": [
+        "#Flow control and condition\n",
+        "milk = 0\n",
+        "eggs = 0\n",
+        "store_has_eggs = True\n",
+        "#Purchase decisions\n",
+        "milk +=1\n",
+        "if store_has_eggs == True:\n",
+        "    eggs += 12\n",
+        "#Check what was purcahsed\n",
+        "print(milk)\n",
+        "print(eggs)"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "metadata": {
+        "id": "i_sLsE8Fd6uL",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "cell_type": "code",
+      "source": [
+        "#loop allow the repeat of the checking\n",
+        "number = 43\n",
+        "divisor = 5\n",
+        "answer = 0\n",
+        "\n",
+        "#while loop\n",
+        "while number > 0:\n",
+        "    number = number - divisor\n",
+        "    print (number)\n",
+        "    #do something"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "metadata": {
+        "id": "rRuBCy5Xe1q5",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "cell_type": "code",
+      "source": [
+        "for i in range(1,5):\n",
+        "    print(i)\n",
+        "    print(i*3)\n",
+        "    i = 12\n",
+        "    print (i*3)\n",
+        "    print('--')"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "metadata": {
+        "id": "wicU1Ia5fVfc",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        },
+        "outputId": "5790e24e-47de-4567-ded7-d38c8d48be5c"
+      },
+      "cell_type": "code",
+      "source": [
+        "#python def function() reuse the same functions\n",
+        "def says_hello():\n",
+        "    print('Hello!')\n",
+        "says_hello()\n",
+        "\n",
+        "def add(num1,num2):\n",
+        "  return(num1+num2)\n",
+        "\n",
+        "add(1,2);"
+      ],
+      "execution_count": 15,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "Hello!\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "id": "ETyKBhTxiPqp",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 278
+        },
+        "outputId": "8f0112af-27f5-41e6-c62f-9e31c5ff1ebb"
+      },
+      "cell_type": "code",
+      "source": [
+        "#1,1,2,3,5,8,13 # appear in the nature - fibonacci sequence\n",
+        "\n",
+        "#1,1 - 2\n",
+        "#1,2 - 3\n",
+        "#last till 6\n",
+        "\n",
+        "pre = 1\n",
+        "next = 1\n",
+        "sum = 0\n",
+        "\n",
+        "for i in range (1,6): \n",
+        "  print (pre)\n",
+        "  print (next)\n",
+        "  sum = pre + next #2\n",
+        "  print (sum)\n",
+        "  pre = sum + pre\n",
+        "  next = pre + next + next\n",
+        "  "
+      ],
+      "execution_count": 40,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "1\n",
+            "1\n",
+            "2\n",
+            "3\n",
+            "5\n",
+            "8\n",
+            "11\n",
+            "21\n",
+            "32\n",
+            "43\n",
+            "85\n",
+            "128\n",
+            "171\n",
+            "341\n",
+            "512\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "id": "QMnZeQ95lNN6",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 206
+        },
+        "outputId": "667d928e-9613-4267-e2e3-02b61d90acc9"
+      },
+      "cell_type": "code",
+      "source": [
+        "#use to manipulate the excel files\n",
+        "import pandas as pd\n",
+        "\n",
+        "#now let us load in some data\n",
+        "url = \"http://bit.ly/wkspdata\"\n",
+        "titanic_data = pd.read_csv(url)\n",
+        "titanic_data.head()"
+      ],
+      "execution_count": 46,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>survived</th>\n",
+              "      <th>pclass</th>\n",
+              "      <th>name</th>\n",
+              "      <th>sex</th>\n",
+              "      <th>age</th>\n",
+              "      <th>sibsp</th>\n",
+              "      <th>parch</th>\n",
+              "      <th>ticket</th>\n",
+              "      <th>fare</th>\n",
+              "      <th>cabin</th>\n",
+              "      <th>embarked</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>0</td>\n",
+              "      <td>3</td>\n",
+              "      <td>Braund, Mr. Owen Harris</td>\n",
+              "      <td>male</td>\n",
+              "      <td>22.0</td>\n",
+              "      <td>1</td>\n",
+              "      <td>0</td>\n",
+              "      <td>A/5 21171</td>\n",
+              "      <td>7.2500</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>S</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>1</td>\n",
+              "      <td>1</td>\n",
+              "      <td>Cumings, Mrs. John Bradley (Florence Briggs Th...</td>\n",
+              "      <td>female</td>\n",
+              "      <td>38.0</td>\n",
+              "      <td>1</td>\n",
+              "      <td>0</td>\n",
+              "      <td>PC 17599</td>\n",
+              "      <td>71.2833</td>\n",
+              "      <td>C85</td>\n",
+              "      <td>C</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>1</td>\n",
+              "      <td>3</td>\n",
+              "      <td>Heikkinen, Miss. Laina</td>\n",
+              "      <td>female</td>\n",
+              "      <td>26.0</td>\n",
+              "      <td>0</td>\n",
+              "      <td>0</td>\n",
+              "      <td>STON/O2. 3101282</td>\n",
+              "      <td>7.9250</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>S</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>3</th>\n",
+              "      <td>1</td>\n",
+              "      <td>1</td>\n",
+              "      <td>Futrelle, Mrs. Jacques Heath (Lily May Peel)</td>\n",
+              "      <td>female</td>\n",
+              "      <td>35.0</td>\n",
+              "      <td>1</td>\n",
+              "      <td>0</td>\n",
+              "      <td>113803</td>\n",
+              "      <td>53.1000</td>\n",
+              "      <td>C123</td>\n",
+              "      <td>S</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>4</th>\n",
+              "      <td>0</td>\n",
+              "      <td>3</td>\n",
+              "      <td>Allen, Mr. William Henry</td>\n",
+              "      <td>male</td>\n",
+              "      <td>35.0</td>\n",
+              "      <td>0</td>\n",
+              "      <td>0</td>\n",
+              "      <td>373450</td>\n",
+              "      <td>8.0500</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>S</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "   survived  pclass                                               name  \\\n",
+              "0         0       3                            Braund, Mr. Owen Harris   \n",
+              "1         1       1  Cumings, Mrs. John Bradley (Florence Briggs Th...   \n",
+              "2         1       3                             Heikkinen, Miss. Laina   \n",
+              "3         1       1       Futrelle, Mrs. Jacques Heath (Lily May Peel)   \n",
+              "4         0       3                           Allen, Mr. William Henry   \n",
+              "\n",
+              "      sex   age  sibsp  parch            ticket     fare cabin embarked  \n",
+              "0    male  22.0      1      0         A/5 21171   7.2500   NaN        S  \n",
+              "1  female  38.0      1      0          PC 17599  71.2833   C85        C  \n",
+              "2  female  26.0      0      0  STON/O2. 3101282   7.9250   NaN        S  \n",
+              "3  female  35.0      1      0            113803  53.1000  C123        S  \n",
+              "4    male  35.0      0      0            373450   8.0500   NaN        S  "
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 46
+        }
+      ]
+    }
+  ]
+}
