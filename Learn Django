@@ -1,0 +1,33 @@
+pip3 install Django
+apt-get install python3
+django-admin startproject helloapp
+python3
+manage.py startapp howdy
+/root/Desktop/django/helloapp/helloapp/settings.py
+On MiddleWare->type 'howdy'
+python3 manage.py runserver
+On helloapp/helloapp/settings.py
+#from django.urls import path
+#path('admin/', admin.site.urls),
+url(r'^admin/',admin.site.urls),
+url(r'^',include('howdy.urls')),
+
+On helloapp/howdy
+from django.conf.urls import url
+from howdy import views
+urlpatterns = [
+    url(r'^$/',views.HomePageView.as_view()),
+]
+
+Helloapp -> 
+							--> Howdy->
+																		Urls (Homepage) --> View(HTML)
+
+On helloapp/howdy/views.py
+from django.shortcuts import render
+from django.views.generic import TemplateView
+# Create your views here
+class HomePageView(TemplateView):
+	def get(self,request, **kwargs):
+	return render(request,'index.html',context=None)
+
